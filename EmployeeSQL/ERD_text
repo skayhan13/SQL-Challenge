@@ -1,44 +1,45 @@
 #  Exported from QuickDBD: https://www.quickdatabasediagrams.com/
-#  Create a table for each csv you will be importing: CREATE TABLE statement
-#  Create departments table
+#  Critical to import these tables in the order below, since the keys make references to other tables your import will not be successful
+#  Create titles table
 
-"departments"
+titles
 --
-"dept_no" VARCHAR PK
-"dept_name" CHAR
+title_id VARCHAR
+title VARCHAR
+
+#  Create employees table
+employees
+--
+emp_no INT PK
+emp_title_id VARCHAR FK >- titles.title_id
+birth_date Date
+first_name VARCHAR
+last_name VARCHAR
+sex CHAR
+hire_date Date
+
+#  Create salaries table
+salaries
+--
+emp_no INT FK >- employees.emp_no
+salary INT
+
+#  Create departments table
+departments
+--
+dept_no VARCHAR PK
+dept_name VARCHAR
 
 # setting the department number as the primary key will be unique identifier
 #  Create department employees table
-"dept_emp"
+dept_emp
 --
-"emp_no" INT FK >- employees."emp_no"
-"dept_no" VARCHAR FK >- departments."dept_no"
+emp_no INT PK FK >- employees.emp_no
+dept_no VARCHAR PK FK >- departments.dept_no
 
 #  Create department manager table
-"dept_manager"
+dept_manager
 --
-"dept_no" VARCHAR FK >- "departments"."dept_no"
-"emp_no" INT FK >- "employees"."emp_no"
+dept_no VARCHAR PK FK >- departments.dept_no
+emp_no INT PK FK >- employees.emp_no
 
-#  Create employees table
-"employees"
---
-"emp_no" INT PK
-"emp_title_id" VARCHAR
-"birth_date" Date
-"first_name" VARCHAR
-"last_name" VARCHAR
-"sex" CHAR
-"hire_date" Date
-
-#  Create salaries table
-"salaries"
---
-"emp_no" INT FK >- "employees"."emp_no"
-"salary" INT
-
-#  Create titles table
-"titles"
---
-"title_id" VARCHAR FK >- "employees"."emp_title_id"
-"title" VARCHAR

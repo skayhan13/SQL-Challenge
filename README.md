@@ -36,12 +36,12 @@ Once you have a complete database, do the following:
 8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name. 
 
 ## Relationships/ Analysis Gathered from Data Engineering:
-* departments 1-to-many to dept_emp: employees can belong to more than one department over time (for example, switching departments)
-* departments many-to-many to dept_manager: departments can have multiple managers assigned to them over time. Also managers can (theoretically at least) manage multiple departments over time
-* employees many-to-many to titles: employees can have more than one title as they may be promoted. One title can have many employees assigned with the same title. Therefore, a many-to-many relationship
-* employees many-to-many to salaries: similar to the aforementioned relationship. Because employees can have more than one title as they get promoted, they may have more than one salary level. One salary level can have many * employees as multiple employees can make the same salary. Therefore, a many-to-many relationship
-* employees many-to-1 to dept_emp: a department can contain multiple employees
-* employees many-to-1 to dept_manager: a manager can have many employees under their team
+* departments 1-to-many to dept_emp: employees can belong to more than one department over time (for example, switching departments.)
+* departments many-to-many to dept_manager: departments can have multiple managers assigned to them over time. Also managers can (theoretically at least) manage multiple departments over time.
+* employees many-to-many to titles: employees can have more than one title as they may be promoted. One title can have many employees assigned with the same title. Therefore, a many-to-many relationship exists.
+* employees many-to-many to salaries: similar to the aforementioned relationship. Because employees can have more than one title as they get promoted, they may have more than one salary level. One salary level can have many employees as multiple employees can make the same salary. Therefore, a many-to-many relationship exists.
+* employees many-to-1 to dept_emp: a department can contain multiple employees.
+* employees many-to-1 to dept_manager: a manager can have many employees under their team.
 
 ## Directory Structure:
 Once inside the "Employee SQL" folder, navigate to the "ERD.png" to see the visual representation of the table schema.  "schema.sql" has the creation of the tables and "query.sql" has the query results.  Within the "data" directory under "Employee SQL" all the csv files can be found.

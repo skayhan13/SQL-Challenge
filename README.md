@@ -23,7 +23,7 @@ Note: You may hear the term "Data Modeling" in place of "Data Engineering," but 
 
 * Import each CSV file into the corresponding SQL table. Note be sure to import the data in the same order that the tables were created and account for the headers when importing to avoid errors.
 
-![ERD](/EmployeeSQL/data/ERD.png)
+![ERD](/EmployeeSQL/ERD.png)
 
 ## Data Analysis:
 Once you have a complete database, do the following:
